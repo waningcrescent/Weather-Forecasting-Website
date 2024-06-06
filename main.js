@@ -6,8 +6,8 @@ navigator.geolocation.getCurrentPosition(positionSuccess, positionError)
 
 function positionSuccess({ coords }) {
   getWeather(
-    40, //coords.latitude,
-    75,//coords.longitude,
+    coords.latitude,
+    coords.longitude,
     Intl.DateTimeFormat().resolvedOptions().timeZone
   )
     .then(renderWeather)
